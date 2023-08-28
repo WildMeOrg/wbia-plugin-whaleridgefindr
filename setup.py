@@ -180,7 +180,7 @@ AUTHORS = [
 AUTHOR_EMAIL = 'info@wildme.org'
 URL = 'https://github.com/WildbookOrg/wbia-plugin-whaleridgefindr'
 LICENSE = 'Apache Version 2.0'
-DESCRIPTION = 'wbia_whaleridgefindr - A plug-in for the finFindR gray whale ID algorithm'
+DESCRIPTION = 'wbia-whaleridgefindr - A plug-in for the finFindR gray whale ID algorithm'
 
 KWARGS = OrderedDict(
     name=NAME,
@@ -208,7 +208,7 @@ KWARGS = OrderedDict(
         'local_scheme': 'dirty-tag',
     },
     packages=find_packages(),
-    package_dir={'wbia_whaleridgefindr': 'wbia_whaleridgefindr'},
+    package_dir={'wbia-whaleridgefindr': 'wbia-whaleridgefindr'},
     include_package_data=False,
     # List of classifiers available at:
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers
