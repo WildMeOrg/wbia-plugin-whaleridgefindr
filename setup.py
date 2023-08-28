@@ -55,7 +55,7 @@ def native_mb_python_tag(plat_impl=None, version_info=None):
     return mb_tag
 
 
-def parse_version(fpath='wbia_whaleridgefindr/__init__.py'):
+def parse_version(fpath='wbia-whaleridgefindr/__init__.py'):
     """
     Statically parse the version number from a python file
 
