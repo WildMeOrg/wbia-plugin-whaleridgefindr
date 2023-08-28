@@ -9,7 +9,7 @@ whaleridgefindr Plug-in - Part of the WildMe / Wildbook IA Project.
 A plug-in for using the containerized version of the `whaleridgefindr gray whale ID algorithm <https://github.com/haimeh/finFindR>`_.
 
 Running the whaleridgefindr Container
-------------------------------
+--------------------------------------
 This plugin assumes that:
 
 1. You have separately started the whaleridgefindr container with the command: 
