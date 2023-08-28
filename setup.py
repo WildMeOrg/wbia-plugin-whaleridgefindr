@@ -203,8 +203,7 @@ KWARGS = OrderedDict(
     # See https://github.com/pypa/setuptools_scm/ for more information
     setup_requires=['setuptools_scm'],
     use_scm_version={
-        'write_to': 'wbia_whaleridgefindr/_version.py',
-        'write_to_template': '__version__ = "{version}"',
+        'write_to_template': '__version__ = "0.0.1"',
         'tag_regex': '^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$',
         'local_scheme': 'dirty-tag',
     },
