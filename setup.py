@@ -208,6 +208,11 @@ KWARGS = OrderedDict(
         'tag_regex': '^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$',
         'local_scheme': 'dirty-tag',
     },
+    use_scm_version={
+        'write_to_template': '__version__ = "0.0.1"',
+        'tag_regex': '^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$',
+        'local_scheme': 'dirty-tag',
+    }
     packages=find_packages(),
     package_dir={'wbia_whaleridgefindr': 'wbia_whaleridgefindr'},
     include_package_data=False,
