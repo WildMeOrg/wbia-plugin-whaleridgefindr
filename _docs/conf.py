@@ -35,10 +35,10 @@ copyright = '2021, Wild Me'
 author = 'Jason Parham'
 
 # The short X.Y version
-version = '0.1.1.dev0'
+version = '0.2.1.dev0'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.1.dev0'
+release = '0.2.1.dev0'
 
 
 # -- General configuration ---------------------------------------------------
