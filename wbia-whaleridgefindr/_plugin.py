@@ -55,7 +55,7 @@ def _wbia_plugin_whaleridgefindr_check_container(url):
 
         if response is not None and response.status_code:
             logger.info(
-                '[wbia_whaleridgefindr - PASSED CONTAINER URL CHECK] URL %r passed the check'
+                '[wbia-whaleridgefindr - PASSED CONTAINER URL CHECK] URL %r passed the check'
                 % url_
             )
             #headers = response.headers
@@ -72,7 +72,7 @@ def _wbia_plugin_whaleridgefindr_check_container(url):
         if not flag:
             args = (endpoint,)
             logger.info(
-                '[wbia_whaleridgefindr - FAILED CONTAINER ENSURE CHECK] Endpoint %r failed the check'
+                '[wbia-whaleridgefindr - FAILED CONTAINER ENSURE CHECK] Endpoint %r failed the check'
                 % args
             )
             logger.info('\tRequired Methods:  %r' % (required_methods,))
@@ -255,13 +255,13 @@ def whaleridgefindr_feature_extract(ibs, annot_uuid, use_depc=True, config={}, *
     Gets the whaleridgefindr feature representation of an annot
 
     CommandLine:
-        python -m wbia_whaleridgefindr._plugin --test-whaleridgefindr_feature_extract
-        python -m wbia_whaleridgefindr._plugin --test-whaleridgefindr_feature_extract:0
+        python -m wbia-whaleridgefindr._plugin --test-whaleridgefindr_feature_extract
+        python -m wbia-whaleridgefindr._plugin --test-whaleridgefindr_feature_extract:0
 
     Example:
         >>> # DISABLE_DOCTEST
         >>> import utool as ut
-        >>> import wbia_whaleridgefindr
+        >>> import wbia-whaleridgefindr
         >>> import wbia
         >>> from wbia.init import sysres
         >>> # The curvrank testdb also uses dolphin dorsals
@@ -296,14 +296,14 @@ def wbia_plugin_whaleridgefindr_identify(
     Matches qaid_list against daid_list using whaleridgefindr
 
     CommandLine:
-        python -m wbia_whaleridgefindr._plugin --test-wbia_plugin_whaleridgefindr_identify
-        python -m wbia_whaleridgefindr._plugin --test-wbia_plugin_whaleridgefindr_identify:0
+        python -m wbia-whaleridgefindr._plugin --test-wbia_plugin_whaleridgefindr_identify
+        python -m wbia-whaleridgefindr._plugin --test-wbia_plugin_whaleridgefindr_identify:0
 
     Example:
         >>> # DISABLE_DOCTEST
         >>> import utool as ut
-        >>> import wbia_whaleridgefindr
-        >>> from wbia_whaleridgefindr._plugin import whaleridgefindrRequest
+        >>> import wbia-whaleridgefindr
+        >>> from wbia-whaleridgefindr._plugin import whaleridgefindrRequest
         >>> import wbia
         >>> from wbia.init import sysres
         >>> # The curvrank testdb also uses dolphin dorsals
@@ -379,14 +379,14 @@ def whaleridgefindr_aid_feature_dict(ibs, aid_list, skip_failures=False):
     takes as input for its distance func
 
     CommandLine:
-        python -m wbia_whaleridgefindr._plugin --test-whaleridgefindr_aid_feature_dict
-        python -m wbia_whaleridgefindr._plugin --test-whaleridgefindr_aid_feature_dict:0
+        python -m wbia-whaleridgefindr._plugin --test-whaleridgefindr_aid_feature_dict
+        python -m wbia-whaleridgefindr._plugin --test-whaleridgefindr_aid_feature_dict:0
 
     Example:
         >>> # DISABLE_DOCTEST
         >>> import utool as ut
-        >>> import wbia_whaleridgefindr
-        >>> from wbia_whaleridgefindr._plugin import whaleridgefindrRequest
+        >>> import wbia-whaleridgefindr
+        >>> from wbia-whaleridgefindr._plugin import whaleridgefindrRequest
         >>> import wbia
         >>> from wbia.init import sysres
         >>> # The curvrank testdb also uses dolphin dorsals
@@ -487,13 +487,13 @@ def whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result(
         response: the response from whaleridgefindr; output of wbia_plugin_whaleridgefindr_identify
 
     CommandLine:
-        python -m wbia_whaleridgefindr._plugin --test-whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result
-        python -m wbia_whaleridgefindr._plugin --test-whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result:0
+        python -m wbia-whaleridgefindr._plugin --test-whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result
+        python -m wbia-whaleridgefindr._plugin --test-whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result:0
 
     Example:
         >>> # DISABLE_DOCTEST
         >>> import utool as ut
-        >>> import wbia_whaleridgefindr
+        >>> import wbia-whaleridgefindr
         >>> import wbia
         >>> from wbia.init import sysres
         >>> # The curvrank testdb also uses dolphin dorsals
@@ -755,7 +755,7 @@ class whaleridgefindrConfig(dt.Config):  # NOQA
 
     Example:
         >>> # DISABLE_DOCTEST
-        >>> from wbia_whaleridgefindr._plugin import *  # NOQA
+        >>> from wbia-whaleridgefindr._plugin import *  # NOQA
         >>> config = whaleridgefindrConfig()
         >>> result = config.get_cfgstr()
         >>> print(result)
@@ -836,14 +836,14 @@ def wbia_plugin_whaleridgefindr(depc, qaid_list, daid_list, config):
     Matches qaid_list against daid_list using whaleridgefindr
 
     CommandLine:
-        python -m wbia_whaleridgefindr._plugin --exec-wbia_plugin_whaleridgefindr
-        python -m wbia_whaleridgefindr._plugin --exec-wbia_plugin_whaleridgefindr:0
+        python -m wbia-whaleridgefindr._plugin --exec-wbia_plugin_whaleridgefindr
+        python -m wbia-whaleridgefindr._plugin --exec-wbia_plugin_whaleridgefindr:0
 
     Example:
         >>> # DISABLE_DOCTEST
         >>> import utool as ut
-        >>> import wbia_whaleridgefindr
-        >>> from wbia_whaleridgefindr._plugin import whaleridgefindrRequest
+        >>> import wbia-whaleridgefindr
+        >>> from wbia-whaleridgefindr._plugin import whaleridgefindrRequest
         >>> import wbia
         >>> from wbia.init import sysres
         >>> # The curvrank testdb also uses dolphin dorsals
@@ -935,7 +935,7 @@ def whaleridgefindr_double_check_random_order(ibs, qaid_list, daid_list):
 if __name__ == '__main__':
     r"""
     CommandLine:
-        python -m wbia_whaleridgefindr._plugin --allexamples
+        python -m wbia-whaleridgefindr._plugin --allexamples
     """
     import multiprocessing
 
