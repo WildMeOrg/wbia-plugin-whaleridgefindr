@@ -4,7 +4,8 @@
 name: Testing
 
 on: push
-
+    branches:
+      - main1
 jobs:
   lint:
     name: Lint code
