@@ -3,7 +3,8 @@
 
 name: Testing
 
-on: push
+on:
+  push:
     branches:
       - main1
 jobs:
