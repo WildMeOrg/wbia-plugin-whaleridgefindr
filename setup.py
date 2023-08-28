@@ -55,7 +55,7 @@ def native_mb_python_tag(plat_impl=None, version_info=None):
     return mb_tag
 
 
-def parse_version(fpath='wbia-whaleridgefindr/__init__.py'):
+def parse_version(fpath='wbia_whaleridgefindr/__init__.py'):
     """
     Statically parse the version number from a python file
 
@@ -180,7 +180,7 @@ AUTHORS = [
 AUTHOR_EMAIL = 'info@wildme.org'
 URL = 'https://github.com/WildbookOrg/wbia-plugin-whaleridgefindr'
 LICENSE = 'Apache Version 2.0'
-DESCRIPTION = 'wbia-whaleridgefindr - A plug-in for the finFindR gray whale ID algorithm'
+DESCRIPTION = 'wbia_whaleridgefindr - A plug-in for the finFindR gray whale ID algorithm'
 
 KWARGS = OrderedDict(
     name=NAME,
@@ -203,13 +203,13 @@ KWARGS = OrderedDict(
     # See https://github.com/pypa/setuptools_scm/ for more information
     setup_requires=['setuptools_scm'],
     use_scm_version={
-        'write_to': 'wbia-whaleridgefindr/_version.py',
+        'write_to': 'wbia_whaleridgefindr/_version.py',
         'write_to_template': '__version__ = "{version}"',
         'tag_regex': '^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$',
         'local_scheme': 'dirty-tag',
     },
     packages=find_packages(),
-    package_dir={'wbia-whaleridgefindr': 'wbia-whaleridgefindr'},
+    package_dir={'wbia_whaleridgefindr': 'wbia_whaleridgefindr'},
     include_package_data=False,
     # List of classifiers available at:
     # https://pypi.python.org/pypi?%3Aaction=list_classifiers
