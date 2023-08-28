@@ -178,7 +178,7 @@ AUTHORS = [
     'Jason Parham',
 ]
 AUTHOR_EMAIL = 'info@wildme.org'
-URL = 'https://github.com/WildbookOrg/wbia-plugin-whaleridgefindr'
+URL = 'https://github.com/WildmeOrg/wbia-plugin-whaleridgefindr'
 LICENSE = 'Apache Version 2.0'
 DESCRIPTION = 'wbia_whaleridgefindr - A plug-in for the finFindR gray whale ID algorithm'
 
