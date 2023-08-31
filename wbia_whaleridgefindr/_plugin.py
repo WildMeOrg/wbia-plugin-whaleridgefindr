@@ -224,7 +224,7 @@ class WhaleRidgeFindRFeatureConfig(dt.Config):  # NOQA
 
 
 @register_preproc_annot(
-    tablename='WhaleRidgeFindRFeature',
+    tablename='whaleridgefindrfeature',
     parents=[ANNOTATION_TABLE],
     colnames=['response'],
     coltypes=[dict],
@@ -280,7 +280,7 @@ def whaleridgefindr_feature_extract(ibs, annot_uuid, use_depc=True, config={}, *
     aid = ibs.get_annot_aids_from_uuid([annot_uuid])[0]
     if use_depc:
         response_list = ibs.depc_annot.get(
-            'WhaleRidgeFindRFeature', [aid], 'response', config=config
+            'whaleridgefindrfeature', [aid], 'response', config=config
         )
         response = response_list[0]
     else:
@@ -406,7 +406,7 @@ def whaleridgefindr_aid_feature_dict(ibs, aid_list, skip_failures=False):
             dirty_aid_list.append(aid)
 
     dirty_hash_data_list = ibs.depc_annot.get(
-        'WhaleRidgeFindRFeature', dirty_aid_list, 'response'
+        'whaleridgefindrfeature', dirty_aid_list, 'response'
     )
     zipped = zip(dirty_aid_list, dirty_hash_data_list)
     for dirty_aid, dirty_hash_data in zipped:
@@ -445,7 +445,7 @@ class whaleridgefindrDistanceConfig(dt.Config):  # NOQA
 
 
 @register_preproc_annot(
-    tablename='whaleridgefindrDistance',
+    tablename='whaleridgefindrdistance',
     parents=[ANNOTATION_TABLE, ANNOTATION_TABLE],
     colnames=['distance'],
     coltypes=[float],
@@ -539,7 +539,7 @@ def whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result(
 def whaleridgefindr_passport(ibs, aid, output=False, config={}, **kwargs):
 
     annot_hash_data = ibs.depc_annot.get(
-        'WhaleRidgeFindRFeature', [aid], 'response', config=config
+        'whaleridgefindrfeature', [aid], 'response', config=config
     )
     hash_data = annot_hash_data[0]
 
@@ -593,7 +593,7 @@ class whaleridgefindrPassportConfig(dt.Config):  # NOQA
 
 
 @register_preproc_annot(
-    tablename='whaleridgefindrPassport',
+    tablename='whaleridgefindrpassport',
     parents=[ANNOTATION_TABLE],
     colnames=['image'],
     coltypes=[('extern', pil_image_load, pil_image_write)],
@@ -629,7 +629,7 @@ def whaleridgefindr_passport_src(aid=None, ibs=None, **kwargs):
     aid = int(aid)
     aid_list = [aid]
     passport_paths = ibs.depc_annot.get(
-        'whaleridgefindrPassport', aid_list, 'image', read_extern=False, ensure=True
+        'whaleridgefindrpassport', aid_list, 'image', read_extern=False, ensure=True
     )
     passport_path = passport_paths[0]
 
@@ -777,7 +777,7 @@ class whaleridgefindrRequest(dt.base.VsOneSimilarityRequest):
         depc = request.depc
         ibs = depc.controller
         passport_paths = ibs.depc_annot.get(
-            'whaleridgefindrPassport',
+            'whaleridgefindrpassport',
             aid_list,
             'image',
             config=config,
@@ -804,7 +804,7 @@ class whaleridgefindrRequest(dt.base.VsOneSimilarityRequest):
         # Extra cleanup for whaleridgefindrDistance
         ibs = depc.controller
         for table_ in ibs.depc_annot.tables:
-            if table_.tablename == 'whaleridgefindrDistance':
+            if table_.tablename == 'whaleridgefindrdistance':
                 rowids_ = table_.get_rowid(parent_rowids, config=request.config)
                 table_.delete_rows(rowids_)
 
@@ -870,7 +870,7 @@ def wbia_plugin_whaleridgefindr(depc, qaid_list, daid_list, config):
 
     ibs = depc.controller
     distances = ibs.depc_annot.get(
-        'whaleridgefindrDistance', (qaid_list, daid_list), 'distance', config=config
+        'whaleridgefindrdistance', (qaid_list, daid_list), 'distance', config=config
     )
     for distance in distances:
         # I'm still confused about these trailing commas. Are we casting this to a unary tuple?
