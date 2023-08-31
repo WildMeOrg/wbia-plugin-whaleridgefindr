@@ -406,7 +406,7 @@ def whaleridgefindr_aid_feature_dict(ibs, aid_list, skip_failures=False):
             dirty_aid_list.append(aid)
 
     dirty_hash_data_list = ibs.depc_annot.get(
-        'whaleridgefindrFeature', dirty_aid_list, 'response'
+        'WhaleRidgeFindRFeature', dirty_aid_list, 'response'
     )
     zipped = zip(dirty_aid_list, dirty_hash_data_list)
     for dirty_aid, dirty_hash_data in zipped:
@@ -539,7 +539,7 @@ def whaleridgefindr_wbia_distance_list_from_whaleridgefindr_result(
 def whaleridgefindr_passport(ibs, aid, output=False, config={}, **kwargs):
 
     annot_hash_data = ibs.depc_annot.get(
-        'whaleridgefindrFeature', [aid], 'response', config=config
+        'WhaleRidgeFindRFeature', [aid], 'response', config=config
     )
     hash_data = annot_hash_data[0]
 
