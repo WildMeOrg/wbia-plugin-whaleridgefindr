@@ -249,7 +249,7 @@ def whaleridgefindr_feature_extract_aid_depc(depc, aid_list, config):
 
 
 @register_ibs_method
-@register_api('/api/plugin/finfindr/feature/', methods=['GET'])
+@register_api('/api/plugin/whaleridgefindr/feature/', methods=['GET'])
 def whaleridgefindr_feature_extract(ibs, annot_uuid, use_depc=True, config={}, **kwargs):
     r"""
     Gets the whaleridgefindr feature representation of an annot
@@ -610,7 +610,7 @@ def whaleridgefindr_passport_depc(depc, aid_list, config):
 
 
 @register_route(
-    '/api/plugin/finfindr/passport/src/<aid>/',
+    '/api/plugin/whaleridgefindr/passport/src/<aid>/',
     methods=['GET'],
     __route_prefix_check__=False,
     __route_authenticate__=False,
