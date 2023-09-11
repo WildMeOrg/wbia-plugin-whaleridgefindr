@@ -35,8 +35,8 @@ register_route = controller_inject.get_wbia_flask_route(__name__)
 # TODO: abstract this out to a func that takes endpoints as an arg and lives in the docker controller
 def _wbia_plugin_whaleridgefindr_check_container(url):
     endpoints = {
-        'ocpu/library/finFindR/R/hashFromImage/json': ['POST'],
-        'ocpu/library/finFindR/R/distanceToRefParallel/json': ['POST'],
+        'ocpu/library/whaleRidgeFindR/R/hashFromImage/json': ['POST'],
+        'ocpu/library/whaleRidgeFindR/R/distanceToRefParallel/json': ['POST'],
     }
     flag_list = []
     endpoint_list = list(endpoints.keys())
@@ -120,7 +120,7 @@ def whaleridgefindr_feature_extract_aid_helper(url, fpath, retry=3):
 
     logger.info('Getting whaleridgefindr hash from %s for file %s' % (url, fpath))
 
-    url_ = 'http://%s/ocpu/library/finFindR/R/hashFromImage/json' % (url)
+    url_ = 'http://%s/ocpu/library/whaleRidgeFindR/R/hashFromImage/json' % (url)
 
     with open(fpath, 'rb') as image_file:
         post_file = {
@@ -364,7 +364,7 @@ def wbia_plugin_whaleridgefindr_identify(
         whaleridgefindr_arg_dict['batchSize'] = 1
 
         url = ibs.whaleridgefindr_ensure_backend(**kwargs)
-        url = 'http://%s/ocpu/library/finFindR/R/distanceToRefParallel/json' % (url)
+        url = 'http://%s/ocpu/library/whaleRidgeFindR/R/distanceToRefParallel/json' % (url)
 
         response = requests.post(url, json=whaleridgefindr_arg_dict)
 
