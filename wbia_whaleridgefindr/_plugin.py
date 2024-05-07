@@ -138,7 +138,7 @@ def whaleridgefindr_feature_extract_aid_helper(url, fpath, retry=3):
     except (json.JSONDecodeError, AssertionError):
         logger.info('------------------')
         logger.info('WHALERIDGEFINDR API ERROR:')
-        logger.info(response.content.decode('ascii'))
+        logger.info(response.content.decode('utf-8'))
         logger.info('------------------')
         json_result = None
 
